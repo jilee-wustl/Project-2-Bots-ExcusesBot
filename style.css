@@ -1,0 +1,144 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css");
+
+html {
+  width:  100vw;
+  height: 100vh;
+  margin: 0;
+  font-family: acumin, sans-serif;
+  background-color: #ccdfd7;
+}
+
+body {
+  color: #4b75b0;
+  padding: 100px;
+  padding-right: 200px;
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 2em;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  font-weight: 800;  
+}
+
+h1 {
+  font-size: 5vw;
+  line-height: 130%;
+  letter-spacing: 0.01em;
+}
+
+
+
+
+
+.info-icon{
+    position: absolute;
+    bottom: 80px;
+    left: 100px;
+    width: 50px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.info-icon svg path{
+    fill: #4b75b0;
+}
+
+.info-icon svg g{
+    fill: #4b75b0;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.refresh-icon {
+    position: absolute;
+    bottom: 50px;
+    left: 185px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 10px;
+    width: 50px;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transition: 0.2s background;
+    transition: 0.2s background;
+}
+.refresh-icon:hover {
+    background-color: rgba(255, 255, 255, 0);
+}
+.refresh-icon:focus {
+    background-color: rgba(255, 255, 255, 0);
+}
+.refresh-icon svg path {
+    stroke: #4b75b0;
+    stroke-width: 6px;
+    stroke-linecap: round;
+    fill: none;
+}
+.refresh-icon svg.arrow-svg {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    -webkit-transform: rotate(-40deg);
+    transform: rotate(-40deg);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
+.arrow-animation {
+    -webkit-animation-name: rotation;
+    animation-name: rotation;
+    -webkit-animation-duration: 0.8s;
+    animation-duration: 0.8s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(-40deg);
+        transform: rotate(-40deg);
+    }
+    80% {
+        -webkit-transform: rotate(340deg);
+        transform: rotate(340deg);
+    }
+    99.999% {
+        -webkit-transform: rotate(460deg);
+        transform: rotate(460deg);
+    }
+    to {
+        -webkit-transform: rotate(-40deg);
+        transform: rotate(-40deg);
+    }
+}
+
+@keyframes rotation {
+    from {
+        -webkit-transform: rotate(-40deg);
+        transform: rotate(-40deg);
+    }
+    80% {
+        -webkit-transform: rotate(340deg);
+        transform: rotate(340deg);
+    }
+    99.999% {
+        -webkit-transform: rotate(460deg);
+        transform: rotate(460deg);
+    }
+    to {
+        -webkit-transform: rotate(-40deg);
+        transform: rotate(-40deg);
+    }
+}
