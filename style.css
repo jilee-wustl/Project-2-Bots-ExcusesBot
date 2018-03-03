@@ -5,13 +5,44 @@ html {
   height: 100vh;
   margin: 0;
   font-family: acumin, sans-serif;
-  background-color: #ccdfd7;
+  background-color: rgba(0,0,0,0.95);
+  transition: background-color 1.5s;
 }
 
 body {
-  color: #4b75b0;
+  transition: color 2s;
+  color: black;
   padding: 100px;
-  padding-right: 200px;
+  padding-right: 150px;
+}
+
+#intro-heading { 
+  margin-top: 0px;  
+}
+
+#generate {
+  font-size: 3vw;
+  color: #e1e7e7;
+  text-decoration: underline;
+}
+
+#generate:hover {
+  cursor: pointer;
+  color: #bc323c;
+  transition: ease-in 0.15s;
+}
+
+.intro {
+  color: #e1e7e7;
+}
+
+#page-container {
+  display: none;
+}
+
+#number {
+  border-bottom: solid 4px;
+  transition: border-bottom-color 1.5s;
 }
 
 h3 {
@@ -28,25 +59,34 @@ h1 {
   letter-spacing: 0.01em;
 }
 
-
-
-
-
 .info-icon{
     position: absolute;
     bottom: 80px;
-    left: 100px;
+    right: 100px;
     width: 50px;
     padding: 10px;
     padding-bottom: 0px;
 }
 
+.intro .info-icon svg path{
+    fill: #e1e7e7;
+    transition: fill 1s;
+}
+
+.intro .info-icon svg g{
+    fill: #e1e7e7;
+    transition: fill .4s;
+}
+
+
 .info-icon svg path{
     fill: #4b75b0;
+    transition: fill 1s;
 }
 
 .info-icon svg g{
     fill: #4b75b0;
+    transition: fill .4s;
 }
 
 button {
@@ -55,10 +95,19 @@ button {
   outline: none;
 }
 
+#not-enough {
+  position: absolute;
+  bottom: 85px;
+  left: 100px;
+  padding: 10px;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
 .refresh-icon {
     position: absolute;
     bottom: 50px;
-    left: 185px;
+    left: 250px;
     border: none;
     outline: none;
     padding: 10px;
@@ -81,6 +130,7 @@ button {
     stroke-width: 6px;
     stroke-linecap: round;
     fill: none;
+    transition: stroke 1.5s;
 }
 .refresh-icon svg.arrow-svg {
     position: absolute;
