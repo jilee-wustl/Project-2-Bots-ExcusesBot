@@ -18,11 +18,9 @@
             F*#ked up? Flaking out?<br>
             Need an excuse?  
         </h1>
-        <h3 id="generate"> Generate an excuse </h3>
-        <button class="info-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 22 27.5" version="1.1" x="0px" y="0px"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <g fill="#D8E5D5"><path d="M11,0 C4.92492,0 0,4.92492 0,11 C0,17.07508 4.92492,22 11,22 C17.07508,22 22,17.07508 22,11 C22,4.92492 17.07508,0 11,0 Z M11,1.5 C5.75334,1.5 1.5,5.75334 1.5,11 C1.5,16.24666 5.75334,20.5 11,20.5 C16.24666,20.5 20.5,16.24666 20.5,11 C20.5,5.75334 16.24666,1.5 11,1.5 Z"/>
-            <rect x="10.25" y="9" width="1.5" height="6" rx="0.75"/><circle cx="11" cy="7" r="1"/></svg>
+        <h3> <span id="generate">Run Excuse Generator</span> </h3>
+        <button class="info-icon" id="landing-page-about">
+            About
         </button>
     </div>
     
@@ -34,10 +32,8 @@
         </div>
         
         <div class="menu">
-        <button class="info-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 22 27.5" version="1.1" x="0px" y="0px"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <g fill="#D8E5D5"><path d="M11,0 C4.92492,0 0,4.92492 0,11 C0,17.07508 4.92492,22 11,22 C17.07508,22 22,17.07508 22,11 C22,4.92492 17.07508,0 11,0 Z M11,1.5 C5.75334,1.5 1.5,5.75334 1.5,11 C1.5,16.24666 5.75334,20.5 11,20.5 C16.24666,20.5 20.5,16.24666 20.5,11 C20.5,5.75334 16.24666,1.5 11,1.5 Z"/>
-            <rect x="10.25" y="9" width="1.5" height="6" rx="0.75"/><circle cx="11" cy="7" r="1"/></svg>
+        <button class="info-icon" id="inside-about">
+            About
         </button>
         
         <div id= "not-enough"> Not Enough? </div>
@@ -52,6 +48,24 @@
         </div>
     </div>
     
+    <div id="about">
+        <h1 id="about-content">
+        Excuse Generator_<br>
+        Excuses. Everywhere. Whenever.<br>
+        Need excuses? <br>
+        Don't worry. I got your back.
+        </h1>
+        <br>
+        <h3><span id="about-title">getoutofthings.life/</span></h3>
+        <div class="menu">
+        <button class="info-icon" id="back">
+            Back
+            <!--<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 22 27.5" version="1.1" x="0px" y="0px"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">-->
+            <!--<g fill="#D8E5D5"><path d="M11,0 C4.92492,0 0,4.92492 0,11 C0,17.07508 4.92492,22 11,22 C17.07508,22 22,17.07508 22,11 C22,4.92492 17.07508,0 11,0 Z M11,1.5 C5.75334,1.5 1.5,5.75334 1.5,11 C1.5,16.24666 5.75334,20.5 11,20.5 C16.24666,20.5 20.5,16.24666 20.5,11 C20.5,5.75334 16.24666,1.5 11,1.5 Z"/>-->
+            <!--<rect x="10.25" y="9" width="1.5" height="6" rx="0.75"/><circle cx="11" cy="7" r="1"/></svg>-->
+        </button>
+    </div>
+    
     <script src="javascript.js"></script>
     
     <script> 
@@ -59,7 +73,7 @@
         
             var color1Array = [];
             var excusesArray= [];
-
+            var landingAbout = false;
             var color2Array = [];
             var randomNum;
             
@@ -125,6 +139,8 @@
     
                 $("html").css({"background-color": color1Array[randomNum]});
                 $("body").css({"color": color2Array[randomNum]});
+                $("#inside-about").css({"color": color2Array[randomNum]});
+
                 $(".info-icon svg g").css({"fill": color2Array[randomNum]});
                 $(".info-icon svg path").css({"fill": color2Array[randomNum]});
                 $(".refresh-icon svg path").css({"stroke": color2Array[randomNum]});
@@ -160,11 +176,44 @@
 
                 $("html").css({"background-color": color1Array[randomNum]});
                 $("body").css({"color": color2Array[randomNum]});
+                $("#inside-about").css({"color": color2Array[randomNum]});
+
                 $("#number").css({"border-bottom-color": color2Array[randomNum]});
                 $(".info-icon svg g").css({"fill": color2Array[randomNum]});
                 $(".info-icon svg path").css({"fill": color2Array[randomNum]});
                 $(".refresh-icon svg path").css({"stroke": color2Array[randomNum]});
             });
+            
+            $("#inside-about").click(function() {
+                $("#page-container").fadeOut("fast");
+                $("#about").delay(300).fadeIn("fast");
+            });
+            
+            $("#landing-page-about").click(function() {
+                $(".intro").fadeOut("fast");
+                $("#about").delay(300).fadeIn("fast");
+                landingAbout = true;
+            });
+            
+            $("#back").click(function() {
+                $("#about").fadeOut("fast");
+                
+                if (landingAbout) {
+                    $(".intro").delay(500).fadeIn("fast");
+                    landingAbout = false;
+                }
+                else {
+                    $("#page-container").delay(500).fadeIn("fast");
+                }
+            });
+            
+            $("#about-title").click(function() {
+                $("#about").fadeOut("fast");
+                $("html").css({"background-color": "#e1e7e7"});
+                $("body").css({"color": "#3e4264"});
+                $(".intro").delay(300).fadeIn("fast");   
+            });
+        
         });
     </script>
 </body>
