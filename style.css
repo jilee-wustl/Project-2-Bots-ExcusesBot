@@ -5,13 +5,13 @@ html {
   height: 100vh;
   margin: 0;
   font-family: acumin, sans-serif;
-  background-color: #e1e7e7;
+  background-color: rgba(255,255,255,0.95);
   transition: background-color 1.5s;
 }
 
 body {
   transition: color 2s;
-  color: #3e4264;
+  color: #111111;
   padding: 100px;
   padding-right: 150px;
 }
