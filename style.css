@@ -5,7 +5,7 @@ html {
   height: 100vh;
   margin: 0;
   font-family: acumin, sans-serif;
-  background-color: rgba(247, 244, 244, 1);
+  background-color: rgba(238, 236, 236, 1);
   transition: background-color 1.5s;
 }
 
