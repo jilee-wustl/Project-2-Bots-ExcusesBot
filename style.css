@@ -5,7 +5,7 @@ html {
   height: 100vh;
   margin: 0;
   font-family: acumin, sans-serif;
-  background-color: rgba(255,255,255,0.95);
+  background-color: rgba(247, 244, 244, 1);
   transition: background-color 1.5s;
 }
 
@@ -42,7 +42,7 @@ body {
 }
 
 .intro {
-  color: #3e4264;
+  color: #111111;
 }
 
 #page-container {
